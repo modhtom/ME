@@ -1,0 +1,33 @@
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  row-gap: 5px;
+  margin: auto;
+}
+
+.image-gallery img {
+  width: 750px;
+  height: 400px;
+  object-fit: cover;
+  position: relative;
+}
+
+.image-caption {
+  font-size: 0.9em;
+  color: #777;
+  text-align: center;
+}
+
+article {
+  line-height: 1.6;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.date-author {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 1.5em;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODHTOM</title>
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/imagePage.css" />
+    <link
+      rel="icon"
+      href="https://avatars.githubusercontent.com/u/85494929?v=4"
+      type="image/icon type"
+    />
+  </head>
+  <body>
+    <header>
+      <a
+        class="logo"
+        href="../index.html"
+        style="color: black; text-decoration: none"
+      >
+        MODHTOM
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/Images Page/index.html">Images</a></li>
+          <li><a href="/ProjectPage/index.html">Projects</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://github.com/modhtom"
+          ><img src="/image/github.svg" alt="Github"
+        /></a>
+        <a href="mailto:mo@modhtom.com"
+          ><img src="/image/email.png" alt="Email"
+        /></a>
+      </div>
+    </header>
+    <section
+      class="hero"
+      style="
+        background: url('/image/pics/Alex/a\ \(21\).jpg') no-repeat center
+          center/cover;
+      "
+    >
+      <div class="hero-text">
+        <h1>Discover Alexandria, Egypt</h1>
+        <p>
+          Experience the allure of Alexandria, a coastal city steeped in history
+          and culture on the Mediterranean coast of Egypt. Known as the "Pearl
+          of the Mediterranean," Alexandria captivates visitors with its ancient
+          ruins, majestic landmarks, and vibrant waterfront promenades. From its
+          legendary lighthouse to its bustling souks, Alexandria offers a
+          fascinating blend of past and present.
+        </p>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <h2>About Alexandria</h2>
+      <p>
+        Founded by Alexander the Great in 331 BCE, Alexandria quickly became one
+        of the most important cities in the ancient world, renowned for its
+        unparalleled intellectual and cultural achievements. Today, Alexandria
+        retains much of its storied past, with landmarks such as the Library of
+        Alexandria and the Citadel of Qaitbay standing as testaments to its rich
+        heritage. Visitors to Alexandria can explore its historic neighborhoods,
+        including the UNESCO-listed Old Town, where narrow alleyways and
+        medieval architecture evoke a sense of bygone eras. The city's bustling
+        Corniche, a scenic waterfront promenade, offers stunning views of the
+        Mediterranean Sea and is the perfect place to relax and soak in the
+        city's coastal charm.
+      </p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+    <script>
+      const gallery = document.getElementById("gallery");
+      const imageCount = 43;
+
+      for (let i = 1; i <= imageCount; i++) {
+        const img = document.createElement("img");
+        img.src = `/image/pics/Alex/a (${i}).jpg`;
+        img.alt = `Gallery Image ${i}`;
+        gallery.appendChild(img);
+      }
+    </script>
+  </body>
+</html>
