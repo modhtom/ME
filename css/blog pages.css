@@ -1,33 +1,79 @@
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-  row-gap: 5px;
-  margin: auto;
+body {
+  background: #f0f8ff; /* Light blue background */
+  color: #333; /* Darker text color for readability */
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Playful font */
+  margin: 0;
+  padding: 0;
+}
+.social-icons {
+  margin-top: 10px;
 }
 
-.image-gallery img {
-  width: 750px;
-  height: 400px;
-  object-fit: cover;
-  position: relative;
+.social-icons a img {
+  width: 30px;
+  margin: 0 5px;
 }
 
-.image-caption {
-  font-size: 0.9em;
-  color: #777;
-  text-align: center;
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 article {
-  line-height: 1.6;
-}
-h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
+  text-align: center;
 }
 
-.date-author {
-  font-size: 0.9em;
-  color: #777;
-  margin-bottom: 1.5em;
+article h1 {
+  font-size: 2.5em;
+  color: #ff69b4;
+}
+
+article h2,
+article h3 {
+  font-size: 2em;
+  color: #1500ff;
+}
+
+article p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+article a {
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+article a:hover {
+  color: #ff4500;
+}
+
+article p:before,
+article p:after {
+  content: "\2605";
+  margin: 0 5px;
+  color: #ffff69;
+}
+
+footer {
+  background: #ff69b4;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
