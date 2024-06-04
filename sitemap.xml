@@ -25,18 +25,18 @@
       <loc>http://www.modhtom.com/images/random</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projects</loc>
+      <loc>http://www.modhtom.com/projectPage</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projects/kip</loc>
+      <loc>http://www.modhtom.com/projectPage/project/kip</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projects/income</loc>
+      <loc>http://www.modhtom.com/projectPage/project/courier</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projects/courier</loc>
+      <loc>http://www.modhtom.com/projectPage/project/income</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projects/moviehub</loc>
+      <loc>http://www.modhtom.com/projectPage/project/movie</loc>
    </url>
 </urlset>
