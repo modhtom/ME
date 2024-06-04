@@ -6,7 +6,11 @@
     <title>MODHTOM</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/imagePage.css" />
-    <link rel="icon" />
+    <link
+      rel="icon"
+      href="https://t4.ftcdn.net/jpg/03/87/28/67/360_F_387286756_WxI8gN9qj6Ei1cccPj9WKhVH8brh0a9M.jpg"
+      type="image/icon type"
+    />
   </head>
   <body>
     <header>
@@ -19,6 +23,7 @@
       </a>
       <nav>
         <ul>
+          <li><a href="/Games/Game.html">Games</a></li>
           <li><a href="/ProjectPage/index.html">Projects</a></li>
         </ul>
       </nav>
@@ -34,17 +39,32 @@
     <section
       class="hero"
       style="
-        background: url('/image/pics/BEST/b\ \(21\).jpg') no-repeat center
+        background: url('/image/pics/Korba/k\ \(16\).jpg') no-repeat center
           center/cover;
       "
     >
       <div class="hero-text">
-        <h1>Best Pictures.</h1>
-        <p>My Best Pictures I took for now.</p>
+        <h1>Discover Korba, Egypt</h1>
+        <p>
+          Explore the unique blend of history, culture, and architecture in
+          Korba. From its charming streets to its vibrant community, Korba
+          offers an unforgettable experience.
+        </p>
       </div>
     </section>
     <section id="about" class="about">
-      <div class="gallery" id="gallery"></div>
+      <h2>About Korba</h2>
+      <p>
+        Korba is a historic district located in Heliopolis, Cairo. Known for its
+        distinctive architecture and rich cultural heritage, Korba is a place
+        where old-world charm meets modern vibrancy. Visitors can stroll through
+        its beautiful streets, enjoy its many cafes and shops, and experience
+        the unique atmosphere that makes Korba a beloved destination for both
+        locals and tourists.
+      </p>
+      <div class="gallery" id="gallery">
+        <img src="/image/pics/Korba/k (1).png" alt="Gallery Image 16" />
+      </div>
     </section>
     <div id="modal" class="modal">
       <span class="close">&times;</span>
@@ -59,11 +79,11 @@
     </div>
     <script>
       const gallery = document.getElementById("gallery");
-      const imageCount = 41;
+      const imageCount = 15;
 
       for (let i = 1; i <= imageCount; i++) {
         const img = document.createElement("img");
-        img.src = `/image/pics/BEST/b (${i}).jpg`;
+        img.src = `/image/pics/Korba/k (${i}).jpg`;
         img.alt = `Gallery Image ${i}`;
         gallery.appendChild(img);
 

@@ -23,6 +23,7 @@
       </a>
       <nav>
         <ul>
+          <li><a href="/Games/Game.html">Games</a></li>
           <li><a href="/ProjectPage/index.html">Projects</a></li>
         </ul>
       </nav>
@@ -38,34 +39,36 @@
     <section
       class="hero"
       style="
-        background: url('/image/pics/Maadi/m\ \(10\).jpg') no-repeat center
+        background: url('/image/pics/Alex/a\ \(21\).jpg') no-repeat center
           center/cover;
       "
     >
       <div class="hero-text">
-        <h1>Discover Maadi, Egypt</h1>
+        <h1>Discover Alexandria, Egypt</h1>
         <p>
-          Explore the serene beauty and urban charm of Maadi, an affluent suburb
-          located along the Nile River in Cairo. Maadi boasts tree-lined
-          streets, spacious villas, and a tranquil atmosphere that provides a
-          welcome escape from the bustling city center. With its lush greenery,
-          quiet neighborhoods, and scenic views of the Nile, Maadi offers a
-          peaceful retreat for residents and visitors alike.
+          Experience the allure of Alexandria, a coastal city steeped in history
+          and culture on the Mediterranean coast of Egypt. Known as the "Pearl
+          of the Mediterranean," Alexandria captivates visitors with its ancient
+          ruins, majestic landmarks, and vibrant waterfront promenades. From its
+          legendary lighthouse to its bustling souks, Alexandria offers a
+          fascinating blend of past and present.
         </p>
       </div>
     </section>
     <section id="about" class="about">
-      <h2>About Maadi</h2>
+      <h2>About Alexandria</h2>
       <p>
-        Originally developed as a residential area for foreign expatriates in
-        the early 20th century, Maadi has evolved into a vibrant community known
-        for its cosmopolitan vibe and diverse population. The suburb is home to
-        a mix of Egyptian families, expatriates, diplomats, and professionals,
-        creating a rich tapestry of cultures and traditions. Visitors to Maadi
-        can explore its charming streets, lined with cafes, restaurants, and
-        boutique shops offering a variety of cuisines, crafts, and products. The
-        suburb also boasts several parks and recreational facilities, making it
-        an ideal destination for outdoor activities and leisurely strolls.
+        Founded by Alexander the Great in 331 BCE, Alexandria quickly became one
+        of the most important cities in the ancient world, renowned for its
+        unparalleled intellectual and cultural achievements. Today, Alexandria
+        retains much of its storied past, with landmarks such as the Library of
+        Alexandria and the Citadel of Qaitbay standing as testaments to its rich
+        heritage. Visitors to Alexandria can explore its historic neighborhoods,
+        including the UNESCO-listed Old Town, where narrow alleyways and
+        medieval architecture evoke a sense of bygone eras. The city's bustling
+        Corniche, a scenic waterfront promenade, offers stunning views of the
+        Mediterranean Sea and is the perfect place to relax and soak in the
+        city's coastal charm.
       </p>
       <div class="gallery" id="gallery"></div>
     </section>
@@ -82,29 +85,29 @@
     </div>
     <script>
       const gallery = document.getElementById("gallery");
-      const imageCount = 11;
+      const imageCount = 43;
 
       for (let i = 1; i <= imageCount; i++) {
         const img = document.createElement("img");
-        img.src = `/image/pics/Maadi/m (${i}).jpg`;
+        img.src = `/image/pics/Alex/a (${i}).jpg`;
         img.alt = `Gallery Image ${i}`;
         gallery.appendChild(img);
-      }
 
-      const modal = document.getElementById("modal");
-      const modalImg = document.getElementById("modal-img");
-      const captionText = document.getElementById("caption");
-      const closeBtn = document.getElementsByClassName("close")[0];
-      gallery.addEventListener("click", function (event) {
-        if (event.target.tagName === "IMG") {
-          modal.style.display = "block";
-          modalImg.src = event.target.src;
-          captionText.innerHTML = event.target.alt;
-        }
-      });
-      closeBtn.onclick = function () {
-        modal.style.display = "none";
-      }; // script.js
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        const captionText = document.getElementById("caption");
+        const closeBtn = document.getElementsByClassName("close")[0];
+        gallery.addEventListener("click", function (event) {
+          if (event.target.tagName === "IMG") {
+            modal.style.display = "block";
+            modalImg.src = event.target.src;
+            captionText.innerHTML = event.target.alt;
+          }
+        });
+        closeBtn.onclick = function () {
+          modal.style.display = "none";
+        };
+      } // script.js
       document.addEventListener("DOMContentLoaded", function () {
         // Check if the user has visited the site before
         if (!localStorage.getItem("hasVisited")) {
