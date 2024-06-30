@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Roboto;
+  font-family: "Helvetica Neue";
 }
 
 header {
@@ -8,7 +8,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color:white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .logo {
@@ -31,9 +31,14 @@ nav ul li a {
   text-decoration: none;
   color: #000;
 }
-
+.social-icons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+}
 .social-icons a {
   margin-left: 15px;
+  display: inline-block;
 }
 
 .social-icons img {
@@ -71,11 +76,16 @@ nav ul li a {
 }
 
 .Recently {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
   padding: 20px;
 }
 
 .Recently h3 {
+  display: inline-block;
   margin-top: 25px;
+  margin-left: 90px;
   margin-bottom: 50px;
   font-size: 20px;
   color: black;
@@ -173,11 +183,17 @@ footer .social-icons a {
   }
 }
 
-h3 {
-  margin-left: 90px;
-}
 @media only screen and (min-width: 568px) {
   img {
     display: block;
   }
+}
+
+#preload{
+  background-color: black url(/image/load.gif) no-repeat center center;
+  background-size: 100%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }

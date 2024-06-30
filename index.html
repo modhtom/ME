@@ -12,7 +12,8 @@
     />
   </head>
   <body>
-    <!-- <header>
+    <div id="preload"></div>
+     <header>
       <div class="logo" herf="index.html">MODHTOM</div>
       <nav>
         <ul>
@@ -22,47 +23,25 @@
         </ul>
       </nav>
       <div class="social-icons">
-        <a href="https://github.com/modhtom">
+        <a href="https://github.com/modhtom">                          
           <img src="image/github.svg" alt="Github" />
         </a>
-        <a href="mailto:mo@modhtom.com">
+        <a href="mailto:modhtom@modhtom.com">
           <img src="/image/email.png" alt="Email" />
         </a>
       </div>
-    </header> -->
+    </header>
     <main>
-      <p style="display: none">
-        محمد حامد سليمان عبد القادر modhtom Mohamed Hamid Suliman Abdalgader
-        Elsobayie
-      </p>
-      <h1>We're Updating Our Website!</h1>
-      <p>
-        Exciting changes are coming! Our website is currently undergoing updates
-        to enhance your experience. Please check back soon for a fresh look.
-        Thank you for your patience!
-      </p>
-    </main>
-    <!-- <main>
-      <p style="display: none">
-        محمد حامد سليمان عبد القادر modhtom Mohamed Hamid Suliman Abdalgader
-        Elsobayie
-      </p>
       <div class="align-items">
         <img src="/image/me.jpg" alt="Me" rel="preload" />
         <h2 style="margin-top: 45px">
-          Hello! I’m a Computer Science student at Ain Shams University with a
-          passion for backend development, photography, and exploring various
+          Hello! I’m a Computer Science student at Ain Shams University.<br> with a
+          passion for backend development, photography,<br> and exploring various
           other interests.
-          <small style="font-size: 60%">
-            <br />
-            In the realm of photography enthusiast, I capture moments with my
-            <br />
-            Nikon FM2, equipped with a Nikon Series E 50mm f/1.8 AI len</small
-          >
         </h2>
       </div>
       <div class="images">
-        <img src="/image/pics/BEST/b (33).jpg" alt="Image 1" class="lazyload" />
+        <img src="/image/pics/BEST/b (33).jpg" alt="Image 1" class="lazyload" class="active" />
         <img src="/image/pics/BEST/b (18).jpg" alt="Image 2" class="lazyload" />
         <img src="/image/pics/BEST/b (10).jpg" alt="Image 3" class="lazyload" />
       </div>
@@ -87,6 +66,14 @@
           >
         </h3>
       </div>
-    </main> -->
+    </main>
+    <script>
+
+      var loader= document.getElementById("preload");
+      window.addEventListener("load",function(){
+        loader.style.display = "none";
+      });
+
+    </script>
   </body>
 </html>
