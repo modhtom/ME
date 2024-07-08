@@ -1,42 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>http://www.modhtom.com/</loc>
+      <loc>http://www.modhtom.com/index.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images</loc>
+      <loc>http://www.modhtom.com/contact.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/best</loc>
+      <loc>http://www.modhtom.com/404.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/last</loc>
+      <loc>http://www.modhtom.com/Sides/W/index.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/last/alexandria</loc>
+      <loc>http://www.modhtom.com/Sides/W/all.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/maadi</loc>
+      <loc>http://www.modhtom.com/Sides/W/project/movie.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/korba</loc>
+      <loc>http://www.modhtom.com/Sides/W/project/kip.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/images/random</loc>
+      <loc>http://www.modhtom.com/Sides/W/project/income.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projectPage</loc>
+      <loc>http://www.modhtom.com/Sides/W/project/courier.html</loc>
    </url>
    <url>
-      <loc>http://www.modhtom.com/projectPage/project/kip</loc>
-   </url>
-   <url>
-      <loc>http://www.modhtom.com/projectPage/project/courier</loc>
-   </url>
-   <url>
-      <loc>http://www.modhtom.com/projectPage/project/income</loc>
-   </url>
-   <url>
-      <loc>http://www.modhtom.com/projectPage/project/movie</loc>
+      <loc>http://www.modhtom.com/Sides/P/index.html</loc>
    </url>
 </urlset>
