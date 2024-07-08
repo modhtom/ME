@@ -1,79 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MODHTOM</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link
-      rel="icon"
-      href="https://t4.ftcdn.net/jpg/03/87/28/67/360_F_387286756_WxI8gN9qj6Ei1cccPj9WKhVH8brh0a9M.jpg"
-      type="image/icon type"
-    />
-  </head>
-  <body>
-    <div id="preload"></div>
-     <header>
-      <div class="logo" herf="index.html">MODHTOM</div>
-      <nav>
-        <ul>
-          <li><a href="Images/index.html">Images</a></li>
-          <li><a href="/ProjectPage/index.html">Projects</a></li>
-          <!-- <li><a href="/Games/Game.html">Games</a></li> -->
-        </ul>
-      </nav>
-      <div class="social-icons">
-        <a href="https://github.com/modhtom">                          
-          <img src="image/github.svg" alt="Github" />
-        </a>
-        <a href="mailto:modhtom@modhtom.com">
-          <img src="/image/email.png" alt="Email" />
-        </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.cdnfonts.com/css/higher-jump" rel="stylesheet">
+  <link rel="icon" href="/image/logo.png" type="image/icon type">
+  <title>MODHTOM</title>
+</head>
+<body>
+  <div id="preload"></div>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1>   
+          Which side you</br>
+          want to Explore?
+        </h1>
       </div>
-    </header>
-    <main>
-      <div class="align-items">
-        <img src="/image/me.jpg" alt="Me" rel="preload" />
-        <h2 style="margin-top: 45px">
-          Hello! I’m a Computer Science student at Ain Shams University.<br> with a
-          passion for backend development, photography,<br> and exploring various
-          other interests.
-        </h2>
-      </div>
-      <div class="images">
-        <img src="/image/pics/BEST/b (33).jpg" alt="Image 1" class="lazyload" class="active" />
-        <img src="/image/pics/BEST/b (18).jpg" alt="Image 2" class="lazyload" />
-        <img src="/image/pics/BEST/b (10).jpg" alt="Image 3" class="lazyload" />
-      </div>
-      <div class="Recently">
-        <h3>
-          My latest photography journey has taken me
-          <br />
-          to Alexandria
-          <a href="/Images Page/alex.html" style="color: black" target="_blank"
-            >View Images →</a
-          >
-        </h3>
-        <h3>
-          Recently, I have been working on a side project called Keyed In Peace.
-          <br />
-          It’s a Keyboard white Noise website.
-          <a
-            href="/ProjectPage/project/kip.html"
-            style="color: black"
-            target="_blank"
-            >View Project →</a
-          >
-        </h3>
-      </div>
-    </main>
-    <script>
+    </div>
 
-      var loader= document.getElementById("preload");
-      window.addEventListener("load",function(){
-        loader.style.display = "none";
-      });
+    <div class="image-container">
+      <a href="/Sides/P/index.html">
+        <img src="/image/photo.JPG" alt="Photography">
+      </a>
+      <a href="/Sides/W/index.html">
+        <img src="/image/web.JPG" alt="Web development">
+      </a>
+    </div>
+    
 
-    </script>
-  </body>
+  <script>
+    var loader= document.getElementById("preload");
+    window.addEventListener("load",function(){
+      loader.style.display = "none";
+    });
+  </script>
+</body>
 </html>
