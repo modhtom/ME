@@ -6,14 +6,14 @@ window.addEventListener("load", function() {
     document.addEventListener("DOMContentLoaded", function() {
       var galleryContainer = document.querySelector(".gallery-images");
       var totalImages = 265;
-      var imageFolder = "/image/all/";
+      var imageFolder = "/image/All/";
 
       for (var i = 1; i <= totalImages; i++) {
         var galleryItem = document.createElement("div");
         galleryItem.classList.add("gallery-item");
 
         var img = document.createElement("img");
-        img.dataset.src = imageFolder + "i%20(" + i + ").jpg"; 
+        img.dataset.src = imageFolder + "i (" + i + ").JPG"; 
         img.alt = "Image " + i;
         img.classList.add("lazy");
 
