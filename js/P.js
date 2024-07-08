@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
         galleryItem.classList.add("gallery-item");
 
         var img = document.createElement("img");
-        img.dataset.src = imageFolder + "i (" + i + ").jpg"; 
+        img.dataset.src = imageFolder + "i%20(" + i + ").jpg"; 
         img.alt = "Image " + i;
         img.classList.add("lazy");
 
