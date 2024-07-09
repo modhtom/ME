@@ -74,7 +74,7 @@ footer .social-icons a {
 }
 
 #preload{
-  background:black url(/image/load.gif) no-repeat center center ;
+  background:white url(/image/load.gif) no-repeat center center ;
   background-size: 50%;
   height: 100vh;
   width: 100%;

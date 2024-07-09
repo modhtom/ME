@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 
     document.addEventListener("DOMContentLoaded", function() {
       var galleryContainer = document.querySelector(".gallery-images");
-      var totalImages = 265;
+      var totalImages = 191;
       var imageFolder = "/image/All/";
 
       for (var i = 1; i <= totalImages; i++) {

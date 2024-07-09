@@ -1,5 +1,5 @@
 body {
-  background: url(/image/BACKGROUND.png);
+  background: url(/image/BACKGROUND.png) no-repeat;
   font-family: 'Caveat', cursive;
   margin: 0;
 }
