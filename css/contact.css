@@ -57,6 +57,18 @@ body {
     margin-left: 50px;
     margin-top: 300px;
   }
+  h2{
+    text-align: center;
+    font-size: 53.35px;
+    font-family: VT323;
+    margin-bottom: -10px;
+    color: #E6DB74;
+  }
+  p{
+    white-space: pre;
+    color: #E6DB74;
+    margin-left: 50px;
+  }
 /* Mobile Styles */
 @media (max-width: 768px) {
   .header {
@@ -91,6 +103,6 @@ body {
   }
 
   .contact-info{
-    margin-top: 10px;
+    margin-top: 50px;
     text-align: center;
   }
