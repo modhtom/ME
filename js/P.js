@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 
     document.addEventListener("DOMContentLoaded", function() {
       var galleryContainer = document.querySelector(".gallery-images");
-      var totalImages = 191;
+      var totalImages = 190;
       var imageFolder = "/image/All/";
 
       for (var i = 1; i <= totalImages; i++) {
@@ -17,12 +17,12 @@ window.addEventListener("load", function() {
         img.alt = "Image " + i;
         img.classList.add("lazy");
 
-        var description = document.createElement("div");
-        description.classList.add("description");
-        description.textContent = "Description of Image " + i;
+        // var description = document.createElement("div");
+        // description.classList.add("description");
+        // description.textContent = "Description of Image " + i;
 
         galleryItem.appendChild(img);
-        galleryItem.appendChild(description);
+        // galleryItem.appendChild(description);
         galleryContainer.appendChild(galleryItem);
       }
 
