@@ -11,6 +11,10 @@ a {
   color: #E6DB74;
 }
 
+p{
+  font-family:'Courier New', Courier, monospace;
+}
+
 .header { 
   padding: 0.5em 1em;
 }
