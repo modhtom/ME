@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quran Surah Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>/* Basic reset */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #34495e;
+}
+
+/* Container for the player */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 80%;
+}
+
+/* Player icon and menu styles */
+.icon-player {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon-menu {
+    display: inline-block;
+    text-align: center;
+}
+
+.icon-menu i {
+    font-size: 50px;
+    color: #1ABC9C;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icon-menu:hover i {
+    color: #2ECC71;
+}
+
+.icon-menu p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #34495e;
+}
+
+.icon-menu select {
+    display: none; /* Hide initially */
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+}
+
+/* Show select dropdown on hover */
+.icon-menu:hover select {
+    display: block;
+}
+
+/* Loading indicator */
+#loading {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #e74c3c;
+}
+
+/* Progress bar */
+#progress-bar-container {
+    margin-top: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#progress-bar {
+    background-color: #1ABC9C;
+    height: 100%;
+    width: 0;
+}
+
+/* Verse container */
+#verse-container {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.verse {
+    padding: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.verse.highlight {
+    background-color: #d1f2eb;
+}
+
+.verse:hover {
+    background-color: #e8f6f3;
+    cursor: pointer;
+}
+.verse-box, .translation-box {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.translation-box {
+    background-color: #f9f9f9;
+    opacity: 75%;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Icon-based Surah and Edition Player -->
+        <div class="icon-player">
+            <div class="icon-menu">
+                <i class="fas fa-quran"></i>
+                <p>السورة</p>
+                <select id="surah"></select>
+            </div>
+            <div class="icon-menu">
+                <i class="fas fa-language"></i>
+                <p>القارئ</p>
+                <select id="edition"></select>
+            </div>
+            <div class="icon-menu" id="play-button">
+                <i class="fas fa-play-circle"></i>
+                <p>ابدأ</p>
+            </div>
+            <div class="icon-menu" id="translation-toggle">
+                <i class="fas fa-language"></i>
+                <p>تفسير الايات</p>
+            </div>
+            <div class="icon-menu" id="pause-button" style="display: none;">
+                <i class="fas fa-pause-circle"></i>
+                <p>توقف مؤقت</p>
+            </div>
+            <div class="icon-menu" id="resume-button" style="display: none;">
+                <i class="fas fa-play-circle"></i>
+                <p>متابعة</p>
+            </div>
+            <div class="icon-menu" id="stop-button" style="display: none;">
+                <i class="fas fa-stop-circle"></i>
+                <p>توقف</p>
+            </div>
+        </div>
+        
+        <div id="loading" style="display: none;">Loading...</div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        
+        <div id="verse-container"></div>
+    </div>
+
+        
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const surahSelect = document.getElementById('surah');
+    const editionSelect = document.getElementById('edition');
+    const verseContainer = document.getElementById('verse-container');
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+    const resumeButton = document.getElementById('resume-button');
+    const stopButton = document.getElementById('stop-button');
+    const loadingIndicator = document.getElementById('loading');
+    const progressBar = document.getElementById('progress-bar');
+    
+    let audioQueue = [];
+    let currentVerseIndex = 0;
+    let isPaused = false;
+    let currentAudio = null;
+
+    fetch('https://api.alquran.cloud/v1/surah')
+    .then(response => response.json())
+    .then(data => {
+        data.data.forEach(surah => {
+            const option = document.createElement('option');
+            option.value = surah.number;
+            option.text = `${surah.number}. ${surah.englishName} (${surah.name})`;
+            surahSelect.appendChild(option);
+        });
+    });
+
+    fetch('https://api.alquran.cloud/v1/edition?format=audio&language=ar')
+        .then(response => response.json())
+        .then(data => {
+            data.data.forEach(edition => {
+                const option = document.createElement('option');
+                option.value = edition.identifier;
+                option.text = `${edition.englishName} (${edition.name})`;
+                editionSelect.appendChild(option);
+            });
+        });
+
+    function stopCurrentAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio = null;
+        }
+    }
+
+    function updateProgressBar() {
+        const progress = (currentVerseIndex / audioQueue.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function playNextVerse() {
+        if (currentVerseIndex < audioQueue.length && !isPaused) {
+            const verseData = audioQueue[currentVerseIndex];
+            const { audio, element } = verseData;
+
+            verseContainer.querySelectorAll('.verse').forEach(verse => verse.classList.remove('highlight'));
+            element.classList.add('highlight');
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            currentAudio = audio;
+            currentAudio.play();
+
+            currentAudio.onended = () => {
+                currentVerseIndex++;
+                updateProgressBar();
+                playNextVerse();
+            };
+        } else if (currentVerseIndex >= audioQueue.length) {
+            resetPlayerState();
+        }
+    }
+
+    function playVerseAt(index) {
+        stopCurrentAudio(); 
+        currentVerseIndex = index;
+        isPaused = false;
+        updateProgressBar();
+        playNextVerse();
+        updateControlButtons();
+    }
+
+    function resetPlayerState() {
+        stopCurrentAudio();
+        currentVerseIndex = 0;
+        isPaused = false;
+        updateProgressBar();
+        updateControlButtons();
+    }
+
+    function updateControlButtons() {
+        if (isPaused) {
+            pauseButton.style.display = 'none';
+            resumeButton.style.display = 'inline-block';
+        } else {
+            pauseButton.style.display = 'inline-block';
+            resumeButton.style.display = 'none';
+        }
+        playButton.style.display = 'none';
+        stopButton.style.display = 'inline-block';
+    }
+
+    playButton.addEventListener('click', () => {
+        const surahNumber = surahSelect.value;
+    const edition = editionSelect.value;
+
+    if (surahNumber && edition) {
+        loadingIndicator.style.display = 'block';
+        resetPlayerState();
+
+        fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/editions/${edition},ar.muyassar`)
+            .then(response => response.json())
+            .then(data => {
+                const arabicVerses = data.data[0].ayahs;
+                const translations = data.data[1].ayahs;
+                verseContainer.innerHTML = '';
+                audioQueue = [];
+
+                arabicVerses.forEach((ayah, index) => {
+                    
+                    const verseBox = document.createElement('div');
+                    verseBox.classList.add('verse-box');
+
+                    const verseElement = document.createElement('div');
+                    verseElement.classList.add('verse');
+                    verseElement.textContent = `${ayah.numberInSurah}. ${ayah.text}`;
+                    verseBox.appendChild(verseElement);
+
+                    const translationBox = document.createElement('div');
+                    translationBox.classList.add('translation-box');
+                    const translationElement = document.createElement('div');
+                    translationElement.classList.add('translation');
+                    translationElement.textContent = `التفسير: ${translations[index].text}`;
+                    translationBox.appendChild(translationElement);
+
+                    verseContainer.appendChild(verseBox);
+                    verseContainer.appendChild(translationBox);
+
+                    const verseAudio = new Audio(ayah.audio);
+                    audioQueue.push({ audio: verseAudio, element: verseElement });
+
+                    verseElement.addEventListener('click', () => {
+                        playVerseAt(index);
+                    });
+                });
+
+                playNextVerse();
+                updateControlButtons();
+                loadingIndicator.style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error fetching surah:', error);
+                loadingIndicator.style.display = 'none';
+                alert('Error loading surah. Please try again.');
+            });
+    }
+    });
+
+    pauseButton.addEventListener('click', () => {
+        isPaused = true;
+        if (currentAudio) {
+            currentAudio.pause();
+        }
+        updateControlButtons();
+    });
+
+    resumeButton.addEventListener('click', () => {
+        isPaused = false;
+        if (currentAudio) {
+            currentAudio.play();
+        }
+        updateControlButtons();
+    });
+
+    stopButton.addEventListener('click', () => {
+        resetPlayerState();
+        playButton.style.display = 'inline-block';
+        stopButton.style.display = 'none';
+    });
+
+    const translationToggle = document.getElementById('translation-toggle');
+    function toggleTranslations() {
+        const translationBoxes = document.querySelectorAll('.translation-box');
+        translationBoxes.forEach(box => {
+            if (box.style.display === 'none' || box.style.display === '') {
+                box.style.display = 'block';
+            } else {
+                box.style.display = 'none';
+            }
+        });
+    }
+    document.querySelectorAll('.translation-box').forEach(box => {
+        box.style.display = 'none';
+    });
+    translationToggle.addEventListener('click', toggleTranslations);
+
+});
+</script>
+</body>
+</html>
