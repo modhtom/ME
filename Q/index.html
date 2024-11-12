@@ -22,41 +22,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     color: #34495e;
-    padding: 10px;
 }
 
 /* Container for the player */
 .container {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 500px;
+    display: inline-block;
+    width: 80%;
 }
 
 /* Player icon and menu styles */
 .icon-player {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 .icon-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-block;
     text-align: center;
 }
 
 .icon-menu i {
-    font-size: 40px;
+    font-size: 50px;
     color: #1ABC9C;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -67,8 +64,8 @@ body {
 }
 
 .icon-menu p {
-    margin-top: 5px;
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 18px;
     color: #34495e;
 }
 
@@ -89,18 +86,17 @@ body {
 
 /* Loading indicator */
 #loading {
-    margin-top: 15px;
-    font-size: 16px;
+    margin-top: 20px;
+    font-size: 18px;
     color: #e74c3c;
-    text-align: center;
 }
 
 /* Progress bar */
 #progress-bar-container {
-    margin-top: 15px;
+    margin-top: 20px;
     background-color: #ecf0f1;
     border-radius: 8px;
-    height: 8px;
+    height: 10px;
     width: 100%;
     overflow: hidden;
 }
@@ -113,7 +109,7 @@ body {
 
 /* Verse container */
 #verse-container {
-    margin-top: 15px;
+    margin-top: 20px;
     max-height: 300px;
     overflow-y: auto;
 }
@@ -121,7 +117,6 @@ body {
 .verse {
     padding: 10px;
     border-bottom: 1px solid #ecf0f1;
-    cursor: pointer;
 }
 
 .verse.highlight {
@@ -130,8 +125,8 @@ body {
 
 .verse:hover {
     background-color: #e8f6f3;
+    cursor: pointer;
 }
-
 .verse-box, .translation-box {
     margin-top: 10px;
     padding: 15px;
@@ -145,28 +140,6 @@ body {
     opacity: 75%;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-    .icon-menu i {
-        font-size: 30px;
-    }
-    
-    .icon-menu p {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    #progress-bar-container {
-        height: 6px;
-    }
-
-    .verse-box, .translation-box {
-        padding: 10px;
-    }
-}
 </style>
 </head>
 <body>
@@ -212,6 +185,7 @@ body {
         <div id="verse-container"></div>
     </div>
 
+        
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const surahSelect = document.getElementById('surah');
