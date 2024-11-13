@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,183 +8,206 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body style */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f5f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #34495e;
-}
-
-/* Container for the player */
-.container {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    width: 80%;
-}
-
-/* Player icon and menu styles */
-.icon-player {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    align-items: center;
-}
-
-.icon-menu {
-    display: inline-block;
-    text-align: center;
-}
-
-.icon-menu i {
-    font-size: 50px;
-    color: #1ABC9C;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.icon-menu:hover i {
-    color: #2ECC71;
-}
-
-.icon-menu p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #34495e;
-}
-
-.icon-menu select {
-    display: none; /* Hide initially */
-    margin-top: 10px;
-    font-size: 16px;
-    padding: 5px;
-    border: none;
-    background-color: #ecf0f1;
-    border-radius: 8px;
-}
-
-/* Show select dropdown on hover */
-.icon-menu:hover select {
-    display: block;
-}
-
-/* Loading indicator */
-#loading {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #e74c3c;
-}
-
-/* Progress bar */
-#progress-bar-container {
-    margin-top: 20px;
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
-}
-
-#progress-bar {
-    background-color: #1ABC9C;
-    height: 100%;
-    width: 0;
-}
-
-/* Verse container */
-#verse-container {
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.verse {
-    padding: 10px;
-    border-bottom: 1px solid #ecf0f1;
-}
-
-.verse.highlight {
-    background-color: #d1f2eb;
-}
-
-.verse:hover {
-    background-color: #e8f6f3;
-    cursor: pointer;
-}
-.verse-box, .translation-box {
-    margin-top: 10px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.translation-box {
-    background-color: #f9f9f9;
-    opacity: 75%;
-}
-
-</style>
-</head>
-<body>
-    <div class="container">
-        <div class="icon-player">
-            <div class="icon-menu">
-                <i class="fas fa-quran"></i>
-                <p>السورة</p>
-                <select id="surah"></select>
-            </div>
-            <div class="icon-menu">
-                <i class="fas fa-language"></i>
-                <p>القارئ</p>
-                <select id="edition"></select>
-            </div>
-            <div class="icon-menu" id="play-button">
-                <i class="fas fa-play-circle"></i>
-                <p>ابدأ</p>
-            </div>
-            <div class="icon-menu" id="translation-toggle">
-                <i class="fas fa-language"></i>
-                <p>تفسير الايات</p>
-            </div>
-            <div class="icon-menu" id="pause-button" style="display: none;">
-                <i class="fas fa-pause-circle"></i>
-                <p>توقف مؤقت</p>
-            </div>
-            <div class="icon-menu" id="resume-button" style="display: none;">
-                <i class="fas fa-play-circle"></i>
-                <p>متابعة</p>
-            </div>
-            <div class="icon-menu" id="stop-button" style="display: none;">
-                <i class="fas fa-stop-circle"></i>
-                <p>توقف</p>
-            </div>
-        </div>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        <div id="loading" style="display: none;">Loading...</div>
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
+        /* Body style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1b1b1b;
+            color: #d1d1d1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
         
-        <div id="verse-container"></div>
-    </div>
+        /* Container for the player */
+        .container {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            width: 80%;
+        }
+        
+        /* Player icon and menu styles */
+        .icon-player {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .icon-menu {
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .icon-menu i {
+            font-size: 50px;
+            color: #4CD7D0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .icon-menu:hover i {
+            color: #A6FFFA;
+        }
+        
+        .icon-menu p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #d1d1d1;
+        }
+        
+        .icon-menu select {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border: none;
+            background-color: #333;
+            color: #d1d1d1;
+            border-radius: 8px;
+        }
+        
+        /* Show select dropdown on hover */
+        .icon-menu:hover select {
+            display: block;
+        }
+        
+        /* Loading indicator */
+        #loading {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff6666;
+        }
+        
+        /* Progress bar */
+        #progress-bar-container {
+            margin-top: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        #progress-bar {
+            background-color: #4CD7D0;
+            height: 100%;
+            width: 0;
+        }
+        
+        /* Verse container */
+        #verse-container {
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            color: #d1d1d1;
+        }
+        
+        .verse {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .verse.highlight {
+            background-color: #2e2e2e;
+        }
+        
+        .verse:hover {
+            background-color: #3e3e3e;
+            cursor: pointer;
+        }
+        
+        .verse-box, .translation-box {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #2b2b2b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            color: #d1d1d1;
+        }
+        
+        .translation-box {
+            background-color: #262626;
+            opacity: 80%;
+        }
+        
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #6070ff;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #435b5b;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #ddd;
+}
+        </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="icon-player">
+                    <div class="icon-menu">
+                        <i class="fas fa-quran"></i>
+                        <p>السورة</p>
+                        <select id="surah"></select>
+                    </div>
+                    <div class="icon-menu">
+                        <i class="fas fa-language"></i>
+                        <p>القارئ</p>
+                        <select id="edition"></select>
+                    </div>
+                    <div class="icon-menu" id="play-button">
+                        <i class="fas fa-play-circle"></i>
+                        <p>ابدأ</p>
+                    </div>
+                    <div class="icon-menu" id="translation-toggle">
+                        <i class="fas fa-language"></i>
+                        <p>تفسير الايات</p>
+                    </div>
+                    <div class="icon-menu" id="pause-button" style="display: none;">
+                        <i class="fas fa-pause-circle"></i>
+                        <p>توقف مؤقت</p>
+                    </div>
+                    <div class="icon-menu" id="resume-button" style="display: none;">
+                        <i class="fas fa-play-circle"></i>
+                        <p>متابعة</p>
+                    </div>
+                    <div class="icon-menu" id="stop-button" style="display: none;">
+                        <i class="fas fa-stop-circle"></i>
+                        <p>توقف</p>
+                    </div>
+                </div>
+                
+                <div id="loading" style="display: none;">Loading...</div>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                
+                <div id="verse-container"></div>
+            </div>
         
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -245,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             verseContainer.querySelectorAll('.verse').forEach(verse => verse.classList.remove('highlight'));
             element.classList.add('highlight');
-            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             currentAudio = audio;
             currentAudio.play();
