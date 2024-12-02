@@ -1,102 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MODHTOM Projects - Explore our innovative projects and technologies.">
-  <meta name="keywords" content="MODHTOM, Projects, Web Development, Technology">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/W-all.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@400;700&display=swap">
-  <link rel="icon" href="/image/logo.png" type="image/icon type">
-  <title>MODHTOM - Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODHTOM's Projects 🛠️</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div id="preload"></div>
-
-  <header class="header">
-    <div class="identity">
-      <h1><a href="/index.html">MODHTOM</a></h1>
-    </div>  
-    <nav class="navigation" role="navigation" aria-label="Main Navigation">
-      <ul class="nav">
-        <li><a href="/index.html#about">About</a></li>
-      </ul>
+    <nav class="navbar">
+        <div class="nav-brand">MODHTOM</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="https://photos.modhtom.com/" target="_blank">Photos</a>
+        </div>
+        <button class="theme-toggle">🌙</button>
     </nav>
-  </header>
-  
-  <main>
-    <section class="card-container">
-      <div class="card" onclick="window.location.href='/project/kip.html'">
-        <div class="card-title">KIP</div>
-        <img src="/image/project/kip.png" alt="KIP Image">
-        <div class="card-description">It’s a Keyboard white Noise website.</div>
-        <div class="tech-icons">
-          <i class="fab fa-html5"></i>
-          <i class="fab fa-css3-alt"></i>
-          <i class="fab fa-js"></i>
+
+    <main class="container">
+        <h1>My Digital Playground 🎮</h1>
+        <div class="intro-meme">
+            <img src="https://i.giphy.com/media/hrSFdM4rg8VFpXyz2m/giphy.webp" alt="Coding meme">
+            <p>Evolution of a programmer 😎</p>
         </div>
-      </div>
+        
+        <div class="projects-grid">
+            <!-- KIP Project -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <h3>KIP - Keyboard White Noise 🎹</h3>
+                    <img src="https://i.giphy.com/media/LmNwrBhejkK9EFP504/giphy.webp" alt="Typing meme">
+                </div>
+                <p>Because who doesn't love the sound of mechanical keyboards? 🎵</p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://kip.modhtom.com/" target="_blank" class="live-demo"><i class="fas fa-play"></i> Live Demo</a>
+                    <a href="https://github.com/modhtom/Keyed-In-Peace" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
 
-      <div class="card" onclick="window.location.href='/project/movie.html'">
-        <div class="card-title">MovieHub</div>
-        <img src="/image/project/movie.png" alt="MovieHub Image">
-        <div class="card-description">A community-driven platform for exploring, sharing, and enjoying movies.</div>
-        <div class="tech-icons">
-          <i class="fab fa-python"></i>
-          <i class="fas fa-flask"></i>
-          <i class="fas fa-database"></i>
+            <!-- MovieHub Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-header">
+                    <h3>MovieHub 🎬</h3>
+                    <img src="https://i.giphy.com/media/3o7rc0qU6m5hneMsuc/giphy.webp" alt="Movie meme">
+                </div>
+                <p>Netflix who? We've got our own streaming party! 🍿</p>
+                <div class="tech-stack">
+                    <span>Python Flask</span>
+                    <span>SQLite</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/modhtom/Movie-App" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- CMS Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-header">
+                    <h3>Courier Management System 📦</h3>
+                    <img src="https://i.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.webp" alt="Delivery meme">
+                </div>
+                <p>Making packages fly faster than my coffee consumption! ☕</p>
+                <div class="tech-stack">
+                    <span>C#</span>
+                    <span>Oracle</span>
+                    <span>Crystal Reports</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/wantedali/Courier-Management-System" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- Income Prediction Project -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <h3>Income Prediction AI 💰</h3>
+                    <img src="https://i.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.webp" alt="Money meme">
+                </div>
+                <p>Teaching AI to predict income</p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Pandas</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/modhtom/Income-Prediction" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- SQL Game Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-header">
+                    <h3>SQL Murder Mystery 🔍</h3>
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjZtaTNjY2hmbDRhc2Ixb3hwYzRhN2FudXBhMDIyZTJ1N3RyNHd5NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3FfmKOeuzbK0dZBRxG/giphy.gif" alt="Detective meme">
+                </div>
+                <p>WHERE is the murderer? SELECT your suspects! 🕵️‍♂️</p>
+                <div class="tech-stack">
+                    <span>SQL</span>
+                    <span>JavaScript</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://wonderful-innovative-snapdragon.glitch.me/home" target="_blank" class="live-demo"><i class="fas fa-play"></i> Live Demo</a>
+                    <a href="https://github.com/modhtom/SQL-GAME" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <!-- Library System Project -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-header">
+                    <h3>Library Catalog System 📚</h3>
+                    <img src="https://i.giphy.com/media/l0HlOBZcl7sbV6LnO/giphy.webp" alt="Library meme">
+                </div>
+                <p>Making librarians' lives easier, one book at a time! 📖</p>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>JavaFX</span>
+                    <span>MySQL</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/modhtom/Library-Catalog-System" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="card" onclick="window.location.href='/project/courier.html'">
-        <div class="card-title">CMS</div>
-        <img src="/image/project/courier.jpg" alt="Courier Management System Image">
-        <div class="card-description">A tool to streamline courier services.</div>
-        <div class="tech-icons">
-          <i class="fas fa-code"></i>
-          <i class="fas fa-network-wired"></i>
-          <i class="fas fa-database"></i>
-        </div>
-      </div>
-
-      <div class="card" onclick="window.location.href='/project/income.html'">
-        <div class="card-title">PAI</div>
-        <img src="/image/project/income.png" alt="Predicting Adult Income Image">
-        <div class="card-description">Predict income levels based on various factors.</div>
-        <div class="tech-icons">
-          <i class="fab fa-python"></i>
-          <i class="fas fa-network-wired"></i>
-          <i class="fas fa-database"></i>
-        </div>
-      </div>
-
-      <div class="card" onclick="window.location.href='/project/sql.html'">
-        <div class="card-title">GAME</div>
-        <img src="/image/project/sql.png" alt="SQL GAME">
-        <div class="card-description">Engaging SQL-based murder mystery game.</div>
-        <div class="tech-icons">
-          <i class="fab fa-python"></i>
-          <i class="fas fa-database"></i>
-        </div>
-      </div>
-    </section>
-
-    <div class="gif-center">
-      <img src="/image/next_project.gif" alt="Next Project GIF">
-    </div>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2024 MODHTOM. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    var loader = document.getElementById("preload");
-    window.addEventListener("load", function(){
-      loader.style.display = "none";
-    });
-  </script>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 </html>

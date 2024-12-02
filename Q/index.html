@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             verseContainer.querySelectorAll('.verse').forEach(verse => verse.classList.remove('highlight'));
             element.classList.add('highlight');
-            // element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             currentAudio = audio;
             currentAudio.play();
