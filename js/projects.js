@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "Warning: Code may contain traces of midnight debugging 🌙",
         "60% of the time, it works every time! 😎",
         "No bugs were harmed in the making of this project 🐛",
-        "Legend says the first version is still running somewhere 🏃‍♂️"
+        "Legend says the first version is still running somewhere 🏃‍♂️",
+        "This code runs on pure optimism and duct tape 💻✨",
+        "Lines of code written: 10,000. Lines of code kept: 42 📉",
+        "This project was debugged at 3 AM. Handle with care 🌙☠️"
     ];
 
     projectCards.forEach(card => {
