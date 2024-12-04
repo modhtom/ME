@@ -68,4 +68,97 @@ body {
     transition: var(--transition);
 }
 
-/* ... More shared styles ... */
+.story {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(203, 203, 203, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.story h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.story p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid #007BFF;
+    margin-top: 1.5rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 10px;
+    height: 10px;
+    background-color: #007BFF;
+    border-radius: 50%;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -12px;
+    width: 10px;
+    height: 10px;
+    background-color: #007BFF;
+    border-radius: 50%;
+}
+
+.timeline-item .year {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-item .event {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.timeline-item:last-child .event {
+    font-style: italic;
+    color: #ffffff;
+}
+
+.timeline-item:hover .year,
+.timeline-item:hover .event {
+    color: #0056b3;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

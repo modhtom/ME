@@ -12,26 +12,6 @@ AOS.init({
 initNavbar();
 initParticles();
 
-// Theme toggling
-const themeToggle = document.querySelector('.theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
-}
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-});
-
-// Initialize theme
-const savedTheme = localStorage.getItem('theme') || 
-                  (prefersDarkScheme.matches ? 'dark' : 'light');
-setTheme(savedTheme);
-
 // Typing animation
 function setupTypingAnimation() {
     const text = document.querySelector('.typing-text');
@@ -40,7 +20,6 @@ function setupTypingAnimation() {
     const phrases = [
         'Backend Developer 💻',
         'Photography Enthusiast 📸',
-        'Meme Lord 😎'
     ];
 
     let phraseIndex = 0;

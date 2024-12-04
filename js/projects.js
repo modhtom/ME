@@ -12,16 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
         });
-
-        // Handle demo links
-        const demoLink = card.querySelector('.live-demo');
-        if (demoLink) {
-            demoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Add your demo link logic here
-                alert('Demo coming soon! 🚧');
-            });
-        }
     });
 
     // Add scroll reveal animation
