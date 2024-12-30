@@ -53,3 +53,14 @@ function setupTypingAnimation() {
 }
 
 document.addEventListener('DOMContentLoaded', setupTypingAnimation);
+async function getRandomFox() {
+    try {
+        const response = await fetch('https://randomfox.ca/floof/');
+        const data = await response.json();
+        document.getElementById('fox-image').src = data.image;
+    } catch (error) {
+        console.error('Uh-oh! The fox ran away:', error);
+    }
+}
+
+getRandomFox();
