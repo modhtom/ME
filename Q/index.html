@@ -3,78 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quran Surah Player</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/controls.css">
-    <link rel="stylesheet" href="styles/verses.css">
+    <title>القرآن الكريم</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header class="app-header">
-            <h1><i class="fas fa-quran"></i> مشغل القرآن الكريم</h1>
-        </header>
+        <div class="header">
+            <h1>القرآن الكريم</h1>
+            <p class="subtitle">استمع إلى تلاوات عطرة</p>
+        </div>
 
-        <div class="controls-container">
-            <div class="select-controls">
-                <div class="select-group">
-                    <label for="surah">
-                        <i class="fas fa-book-open"></i>
-                        <span>السورة</span>
-                    </label>
-                    <select id="surah"></select>
+        <div id="loading-notification" class="notification">
+            <div class="loading-spinner"></div>
+            جاري تحميل البيانات...
+        </div>
+
+        <div class="player-card">
+            <div class="selection-group">
+                <div class="select-wrapper">
+                    <label for="moshaf">الرواية</label>
+                    <select id="moshaf" class="custom-select">
+                        <option value="">-- اختر الرواية --</option>
+                    </select>
                 </div>
 
-                <div class="select-group">
-                    <label for="edition">
-                        <i class="fas fa-microphone"></i>
-                        <span>القارئ</span>
-                    </label>
-                    <select id="edition"></select>
+                <div class="select-wrapper">
+                    <label for="reciter">القارئ</label>
+                    <select id="reciter" class="custom-select">
+                        <option value="">-- اختر القارئ --</option>
+                    </select>
+                </div>
+
+                <div class="select-wrapper">
+                    <label for="surah">السورة</label>
+                    <select id="surah" class="custom-select">
+                        <option value="">-- اختر السورة --</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="player-controls">
-                <button id="play-button" class="btn btn-primary">
-                    <i class="fas fa-play"></i>
-                    <span>ابدأ</span>
-                </button>
-                <button id="pause-button" class="btn btn-warning" style="display: none;">
-                    <i class="fas fa-pause"></i>
-                    <span>توقف مؤقت</span>
-                </button>
-                <button id="resume-button" class="btn btn-success" style="display: none;">
-                    <i class="fas fa-play"></i>
-                    <span>متابعة</span>
-                </button>
-                <button id="stop-button" class="btn btn-danger" style="display: none;">
-                    <i class="fas fa-stop"></i>
-                    <span>توقف</span>
-                </button>
-                <button id="translation-toggle" class="btn btn-secondary">
-                    <i class="fas fa-language"></i>
-                    <span>تفسير الايات</span>
-                </button>
+            <button id="play-btn" class="play-button" disabled>
+                <span class="button-icon">▶</span>
+                <span class="button-text">تشغيل السورة</span>
+            </button>
+
+            <div class="audio-wrapper">
+                <audio id="audio-player" controls></audio>
             </div>
         </div>
-
-        <div id="loading" class="loading">
-            <div class="spinner"></div>
-            <span>جاري التحميل...</span>
-        </div>
-
-        <div class="progress-container">
-            <div id="progress-bar" class="progress-bar"></div>
-        </div>
-
-        <main id="verse-container" class="verse-container"></main>
     </div>
 
+    <script src="js/surahNames.js"></script>
     <script src="js/api.js"></script>
-    <script src="js/audio-controller.js"></script>
-    <script src="js/ui-controller.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
 </body>
 </html>
