@@ -57,7 +57,10 @@ async function getRandomFox() {
     try {
         const response = await fetch('https://randomfox.ca/floof/');
         const data = await response.json();
-        document.getElementById('fox-image').src = data.image;
+        if (data.image != "https://randomfox.ca/images/16.jpg")
+            document.getElementById('fox-image').src = data.image;
+        else
+            getRandomFox();
     } catch (error) {
         console.error('Uh-oh! The fox ran away:', error);
     }
