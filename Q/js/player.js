@@ -71,7 +71,6 @@ function playSurah() {
     }
 }
 
-// Event Listeners
 moshafSelect.addEventListener('change', () => {
     populateReciters();
     populateSurahs();
@@ -86,6 +85,51 @@ playButton.addEventListener('click', playSurah);
         playButton.disabled = !(reciterSelect.value && moshafSelect.value && surahSelect.value);
     });
 });
+
+const downloadButton = document.getElementById('download-btn');
+function downloadSurah() {
+    const serverUrl = reciters.find(r => r.id === parseInt(reciterSelect.value))
+                           .moshaf.find(m => m.name === moshafSelect.value).server;
+    const surahNumber = surahSelect.value;
+
+    if (serverUrl && surahNumber) {
+        const downloadUrl = `${serverUrl}${surahNumber.padStart(3, '0')}.mp3`;
+        const fileName = `Surah_${surahNumber}.mp3`;
+
+        fetch(downloadUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const blobUrl = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(blobUrl);
+            })
+            .catch(error => {
+                console.error('Error downloading Surah:', error);
+                alert('حدث خطأ أثناء تنزيل السورة. يرجى المحاولة مرة أخرى.');
+            });
+    }
+}
+
+// Enable or disable the download button based on selection
+[reciterSelect, moshafSelect, surahSelect].forEach(select => {
+    select.addEventListener('change', () => {
+        const isReady = reciterSelect.value && moshafSelect.value && surahSelect.value;
+        downloadButton.disabled = !isReady;
+    });
+});
+
+// Event listener for the download button
+downloadButton.addEventListener('click', downloadSurah);
 
 // Initialize the player
 initializePlayer();
