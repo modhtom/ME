@@ -3,63 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القرآن الكريم</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>تم النقل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .new-url {
+            color: #4da6ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .new-url:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4da6ff;
+            color: #121212;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #3399ff;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>القرآن الكريم</h1>
-            <p class="subtitle">استمع إلى تلاوات عطرة</p>
-        </div>
-
-        <div id="loading-notification" class="notification">
-            <div class="loading-spinner"></div>
-            جاري تحميل البيانات...
-        </div>
-
-        <div class="player-card">
-            <div class="selection-group">
-                <div class="select-wrapper">
-                    <label for="moshaf">الرواية</label>
-                    <select id="moshaf" class="custom-select">
-                        <option value="">-- اختر الرواية --</option>
-                    </select>
-                </div>
-
-                <div class="select-wrapper">
-                    <label for="reciter">القارئ</label>
-                    <select id="reciter" class="custom-select">
-                        <option value="">-- اختر القارئ --</option>
-                    </select>
-                </div>
-
-                <div class="select-wrapper">
-                    <label for="surah">السورة</label>
-                    <select id="surah" class="custom-select">
-                        <option value="">-- اختر السورة --</option>
-                    </select>
-                </div>
-            </div>
-
-            <button id="play-btn" class="play-button" disabled>
-                <span class="button-icon">▶</span>
-                <span class="button-text">تشغيل السورة</span>
-            </button>
-            </br>
-            <button id="download-btn" class="play-button" disabled>
-                <span class="button-icon">⬇</span>
-                <span class="button-text">تحميل السورة</span>
-            </button>
-            
-            <div class="audio-wrapper">
-                <audio id="audio-player" controls></audio>
-            </div>
-        </div>
+        <h1>تم نقل الموقع</h1>
+        <p>لقد انتقلنا إلى الموقع الجديد. يمكنك زيارة الموقع باستخدام الرابط أدناه:</p>
+        <a href="https://quran.modhtom.com" class="new-url" target="_blank">quran.modhtom.com</a>
+        <br><br>
+        <a href="https://quran.modhtom.com" class="button" target="_blank">زيارة الموقع</a>
     </div>
-
-    <script src="js/surahNames.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/player.js"></script>
 </body>
 </html>
