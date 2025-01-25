@@ -1,5 +1,4 @@
 import { initNavbar } from './components/navbar.js';
-import { initParticles } from './components/particles.js';
 
 // Initialize AOS
 AOS.init({
@@ -10,7 +9,6 @@ AOS.init({
 
 // Initialize components
 initNavbar();
-initParticles();
 
 // Typing animation
 function setupTypingAnimation() {
