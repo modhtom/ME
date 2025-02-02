@@ -10,6 +10,15 @@ AOS.init({
 // Initialize components
 initNavbar();
 
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.getElementById('loading-screen').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 500);
+    }, 3000);
+});
+
 // Typing animation
 function setupTypingAnimation() {
     const text = document.querySelector('.typing-text');
