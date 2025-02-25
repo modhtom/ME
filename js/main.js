@@ -1,4 +1,3 @@
-
 // Loading Screen
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
