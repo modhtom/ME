@@ -33,7 +33,7 @@ window.addEventListener('scroll', () => {
 // Typewriter Effect
 function typeWriter() {
     const phrases = [
-        'Backend Developer 💻',
+        'Software Developer 💻',
         'Photography Enthusiast 📸'
     ];
     let phraseIndex = 0;
